@@ -1,15 +1,13 @@
-
 import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { ArrowLeft, Book as BookIcon, FileText, Maximize2, Minimize2, Loader2, Globe, Monitor, Info, BookOpen, ZoomIn, ZoomOut, ChevronLeft, ChevronRight, Settings2, CheckCircle } from 'lucide-react';
 import { Book } from '../types';
 import { COLORS, DDC_CATEGORIES } from '../constants';
 import { Document, Page, pdfjs } from 'react-pdf';
 
-// Fix for "Invalid URL" crash:
-// Use a CDN URL for the worker during preview/development.
-// For offline Raspberry Pi use: Download this file and save it to your public folder as 'pdf.worker.min.mjs', 
-// then change this line to: pdfjs.GlobalWorkerOptions.workerSrc = '/pdf.worker.min.mjs';
-pdfjs.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
+// Robust worker configuration
+// Ensure we have a valid version for the worker URL
+const pdfVersion = pdfjs.version || '4.4.168'; 
+pdfjs.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfVersion}/build/pdf.worker.min.mjs`;
 
 interface BookDetailProps {
   book: Book;
@@ -119,11 +117,29 @@ const BookDetail: React.FC<BookDetailProps> = ({ book, onBack, onFinishBook, isF
     setPageNumber(Number(e.target.value));
   };
 
-  // Safe file handling
-  // We do not construct 'new URL()' here to avoid "Invalid URL" crashes on some browsers/environments
-  // if the pdfUrl is a relative path like "/books/book.pdf" or empty.
+  // Robust file URL handling to prevent "Invalid PDF url data" errors
   const file = useMemo(() => {
-    return { url: book.pdfUrl }; 
+    if (!book.pdfUrl) return null;
+    
+    try {
+      // If it's a local file path (e.g. C:\Users...) entered by mistake, we can't load it in browser.
+      // But we can try to treat it as a string.
+      // Ideally, we want an absolute URL for the worker.
+      
+      const isAbsolute = /^(?:[a-z]+:)?\/\//i.test(book.pdfUrl) || book.pdfUrl.startsWith('data:');
+      
+      if (isAbsolute) {
+        return { url: book.pdfUrl };
+      }
+
+      // Resolve relative path to absolute
+      const absoluteUrl = new URL(book.pdfUrl, window.location.origin).toString();
+      return { url: absoluteUrl };
+      
+    } catch (e) {
+      console.warn("URL resolution failed, using raw string:", book.pdfUrl);
+      return { url: book.pdfUrl };
+    }
   }, [book.pdfUrl]);
 
   const displayCoverUrl = getProcessedCoverUrl(book.coverUrl);

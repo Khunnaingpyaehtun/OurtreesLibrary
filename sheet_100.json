@@ -1,0 +1,821 @@
+[
+  {
+    "#VALUE!": "ACCESSION REGISTER"
+  },
+  {
+    "#VALUE!": "Accession Number",
+    "__EMPTY": "Class Number",
+    "__EMPTY_1": "Book Name",
+    "__EMPTY_2": "Author Name",
+    "__EMPTY_3": "Publisher",
+    "__EMPTY_4": "Year"
+  },
+  {
+    "#VALUE!": "OTL00144",
+    "__EMPTY": "100-0001",
+    "__EMPTY_1": "12 Rules of Life",
+    "__EMPTY_2": "Jordan B. Peterson",
+    "__EMPTY_3": "12 Minutes Notes Myanmar",
+    "__EMPTY_4": "nil"
+  },
+  {
+    "#VALUE!": "OTL00145",
+    "__EMPTY": "100-0002",
+    "__EMPTY_1": "9 Surprising Psychology Studies That Help You Better",
+    "__EMPTY_2": "Peter Hollins",
+    "__EMPTY_3": "12 Minutes Notes Myanmar",
+    "__EMPTY_4": "nil"
+  },
+  {
+    "#VALUE!": "OTL00146",
+    "__EMPTY": "100-0003",
+    "__EMPTY_1": "30 Second Psychology",
+    "__EMPTY_2": "Christian Jarrett",
+    "__EMPTY_3": "Icon Books Ltd",
+    "__EMPTY_4": 2011
+  },
+  {
+    "#VALUE!": "OTL00147",
+    "__EMPTY": "100-0004",
+    "__EMPTY_1": "Manipulation",
+    "__EMPTY_2": "Arthur Horn",
+    "__EMPTY_3": "Arthur Horn",
+    "__EMPTY_4": 2019
+  },
+  {
+    "#VALUE!": "OTL00148",
+    "__EMPTY": "100-0005",
+    "__EMPTY_1": "The Original Buddhist Psychology",
+    "__EMPTY_2": "Beth Jaobs",
+    "__EMPTY_3": "North Atlantic Books",
+    "__EMPTY_4": 2017
+  },
+  {
+    "#VALUE!": "OTL00149",
+    "__EMPTY": "100-0006",
+    "__EMPTY_1": "The Psychology Book",
+    "__EMPTY_2": "DK Publishing ",
+    "__EMPTY_3": "DK Publishing ",
+    "__EMPTY_4": 2012
+  },
+  {
+    "#VALUE!": "OTL00150",
+    "__EMPTY": "100-0007",
+    "__EMPTY_1": "Manipulation Theory and Practice",
+    "__EMPTY_2": "Coons Christian",
+    "__EMPTY_3": "Oxford University Press",
+    "__EMPTY_4": 2014
+  },
+  {
+    "#VALUE!": "OTL00151",
+    "__EMPTY": "100-0008",
+    "__EMPTY_1": "Thinking Fast and Slow",
+    "__EMPTY_2": "Daniel Kahneman",
+    "__EMPTY_3": " Penguin Books",
+    "__EMPTY_4": 2011
+  },
+  {
+    "#VALUE!": "OTL00152",
+    "__EMPTY": "100-0009",
+    "__EMPTY_1": "Manipulation Techniques",
+    "__EMPTY_2": "David Cliff",
+    "__EMPTY_3": "Charlie Creative Lab",
+    "__EMPTY_4": 2020
+  },
+  {
+    "#VALUE!": "OTL00153",
+    "__EMPTY": "100-0010",
+    "__EMPTY_1": "Everything You Need to Know",
+    "__EMPTY_2": "DavidIcke",
+    "__EMPTY_3": "David Icke Book",
+    "__EMPTY_4": 2017
+  },
+  {
+    "#VALUE!": "OTL00154",
+    "__EMPTY": "100-0011",
+    "__EMPTY_1": "The Principles of Buddhist Psychology",
+    "__EMPTY_2": "David J Kalupahana",
+    "__EMPTY_3": "State Univerysity of New York Press",
+    "__EMPTY_4": 1987
+  },
+  {
+    "#VALUE!": "OTL00155",
+    "__EMPTY": "100-0012",
+    "__EMPTY_1": "Introduction to Statistics in Psychology",
+    "__EMPTY_2": "Dennis Howitt",
+    "__EMPTY_3": "Pearson",
+    "__EMPTY_4": 2011
+  },
+  {
+    "#VALUE!": "OTL00156",
+    "__EMPTY": "100-0013",
+    "__EMPTY_1": "Tricks of The Mind",
+    "__EMPTY_2": "Derren Brown",
+    "__EMPTY_3": "Channel 4 Books",
+    "__EMPTY_4": 2007
+  },
+  {
+    "#VALUE!": "OTL00157",
+    "__EMPTY": "100-0014",
+    "__EMPTY_1": "Spirituality and Indian Psychology",
+    "__EMPTY_2": "Dharm P S Bhawuk",
+    "__EMPTY_3": "Springer",
+    "__EMPTY_4": 2011
+  },
+  {
+    "#VALUE!": "OTL00158",
+    "__EMPTY": "100-0015",
+    "__EMPTY_1": "The Psychology and Philosophy of Buddhism",
+    "__EMPTY_2": "Dr WF Jayasuriya",
+    "__EMPTY_3": "Dr WF Jayasuriya",
+    "__EMPTY_4": 2016
+  },
+  {
+    "#VALUE!": "OTL00159",
+    "__EMPTY": "100-0016",
+    "__EMPTY_1": "Dictionary of Psychology",
+    "__EMPTY_2": "Gary R Vandenbos",
+    "__EMPTY_3": "American Psychological Association",
+    "__EMPTY_4": 2015
+  },
+  {
+    "#VALUE!": "OTL00160",
+    "__EMPTY": "100-0017",
+    "__EMPTY_1": "Your brain on Porn",
+    "__EMPTY_2": "Gary Wilson",
+    "__EMPTY_3": "Commonwealth",
+    "__EMPTY_4": 2014
+  },
+  {
+    "#VALUE!": "OTL00161",
+    "__EMPTY": "100-0018",
+    "__EMPTY_1": "Man are from Mars Women are from Venus",
+    "__EMPTY_2": "John Gray",
+    "__EMPTY_3": " Harper Collins ",
+    "__EMPTY_4": 1992
+  },
+  {
+    "#VALUE!": "OTL00162",
+    "__EMPTY": "100-0019",
+    "__EMPTY_1": "The Psychology of Investing",
+    "__EMPTY_2": "John R Nofsinger",
+    "__EMPTY_3": "Routledge",
+    "__EMPTY_4": 2018
+  },
+  {
+    "#VALUE!": "OTL00163",
+    "__EMPTY": "100-0020",
+    "__EMPTY_1": "The Moral Psychology of Forgiveness",
+    "__EMPTY_2": "Kathryn Norlock",
+    "__EMPTY_3": "Rowman & Littlefield",
+    "__EMPTY_4": 2017
+  },
+  {
+    "#VALUE!": "OTL00164",
+    "__EMPTY": "100-0021",
+    "__EMPTY_1": "Psychology Now 2024 Vol3",
+    "__EMPTY_2": "Kelly Bryan",
+    "__EMPTY_3": "Future",
+    "__EMPTY_4": 2024
+  },
+  {
+    "#VALUE!": "OTL00165",
+    "__EMPTY": "100-0022",
+    "__EMPTY_1": "The Psychology of Emotion from Everyday Life",
+    "__EMPTY_2": "K T Strongman",
+    "__EMPTY_3": "John Wiley & Sons Ltd",
+    "__EMPTY_4": 2003
+  },
+  {
+    "#VALUE!": "OTL00166",
+    "__EMPTY": "100-0023",
+    "__EMPTY_1": "Love The Psychology of Attraction",
+    "__EMPTY_2": "Leslie Becker",
+    "__EMPTY_3": "Peggy Vance",
+    "__EMPTY_4": 2016
+  },
+  {
+    "#VALUE!": "OTL00167",
+    "__EMPTY": "100-0024",
+    "__EMPTY_1": "Theories of Counseling and Psychotherapy Systems Strategies",
+    "__EMPTY_2": "Linda Seligman",
+    "__EMPTY_3": "Pearson",
+    "__EMPTY_4": 2007
+  },
+  {
+    "#VALUE!": "OTL00168",
+    "__EMPTY": "100-0025",
+    "__EMPTY_1": "Healing Your Aloneness",
+    "__EMPTY_2": "Margaret Paul",
+    "__EMPTY_3": "Harper San Franciso",
+    "__EMPTY_4": "nil"
+  },
+  {
+    "#VALUE!": "OTL00169",
+    "__EMPTY": "100-0026",
+    "__EMPTY_1": "The Positive Psychology of Buddhism and Yoga Pathsto A Mature Happiness",
+    "__EMPTY_2": "Marvin Lavine",
+    "__EMPTY_3": "Taylor & Francis",
+    "__EMPTY_4": 2008
+  },
+  {
+    "#VALUE!": "OTL00170",
+    "__EMPTY": "100-0027",
+    "__EMPTY_1": "The Psychology of Money",
+    "__EMPTY_2": "Morgan Housel",
+    "__EMPTY_3": "Harriman House",
+    "__EMPTY_4": 2020
+  },
+  {
+    "#VALUE!": "OTL00171",
+    "__EMPTY": "100-0028",
+    "__EMPTY_1": "50 Scientifically Proven Ways to be Persuasive",
+    "__EMPTY_2": "Noah J Goldstein",
+    "__EMPTY_3": "Free Press",
+    "__EMPTY_4": 2008
+  },
+  {
+    "#VALUE!": "OTL00172",
+    "__EMPTY": "100-0029",
+    "__EMPTY_1": "Psych 101",
+    "__EMPTY_2": "Paul Kleinman",
+    "__EMPTY_3": "Adams Media",
+    "__EMPTY_4": 2012
+  },
+  {
+    "#VALUE!": "OTL00173",
+    "__EMPTY": "100-0030",
+    "__EMPTY_1": "Healing your aloness",
+    "__EMPTY_2": "Paul Margaret",
+    "__EMPTY_3": "Harper San Franciso",
+    "__EMPTY_4": 1990
+  },
+  {
+    "#VALUE!": "OTL00174",
+    "__EMPTY": "100-0031",
+    "__EMPTY_1": "Theories of Counseling and Psychotherapy Systems Strategies",
+    "__EMPTY_2": "Linda & Lourie",
+    "__EMPTY_3": "Pearson",
+    "__EMPTY_4": 2001
+  },
+  {
+    "#VALUE!": "OTL00175",
+    "__EMPTY": "100-0032",
+    "__EMPTY_1": "Criminal Psychology A Beginners Guide",
+    "__EMPTY_2": "R Bull",
+    "__EMPTY_3": "One World",
+    "__EMPTY_4": 2006
+  },
+  {
+    "#VALUE!": "OTL00176",
+    "__EMPTY": "100-0033",
+    "__EMPTY_1": "Dark Psychology 7 books in 1",
+    "__EMPTY_2": "Robert Dale Goleman",
+    "__EMPTY_3": "Self-published",
+    "__EMPTY_4": 2019
+  },
+  {
+    "#VALUE!": "OTL00177",
+    "__EMPTY": "100-0034",
+    "__EMPTY_1": "The Psychology of Creative Writing",
+    "__EMPTY_2": "Scott & James",
+    "__EMPTY_3": "Cambridge University Press",
+    "__EMPTY_4": 2009
+  },
+  {
+    "#VALUE!": "OTL00178",
+    "__EMPTY": "100-0035",
+    "__EMPTY_1": "Social Psychology",
+    "__EMPTY_2": "Shelley E Taylor",
+    "__EMPTY_3": "Pearson",
+    "__EMPTY_4": 2006
+  },
+  {
+    "#VALUE!": "OTL00179",
+    "__EMPTY": "100-0036",
+    "__EMPTY_1": "Learn Better Mastering the Skills for Success in Life Business",
+    "__EMPTY_2": "Ulrich Boser",
+    "__EMPTY_3": "Rodale",
+    "__EMPTY_4": 2017
+  },
+  {
+    "#VALUE!": "OTL00180",
+    "__EMPTY": "100-0037",
+    "__EMPTY_1": "The Philosophy Book BigIdeas Simply",
+    "__EMPTY_2": "Will Buckingham",
+    "__EMPTY_3": "DK Publishing ",
+    "__EMPTY_4": 2011
+  },
+  {
+    "#VALUE!": "OTL00181",
+    "__EMPTY": "100-0038",
+    "__EMPTY_1": "ကမ္ဘာကျော်စကားမှတ်သားစရာ",
+    "__EMPTY_2": "ကောင်းသန့်",
+    "__EMPTY_3": "ကောင်းသန့်စာပေ",
+    "__EMPTY_4": 2013
+  },
+  {
+    "#VALUE!": "OTL00182",
+    "__EMPTY": "100-0039",
+    "__EMPTY_1": "မွေးရာပါပင်ကိုယ်စွမ်းအင်စိတ်တန်ခိုး",
+    "__EMPTY_2": "ကောင်းသာ",
+    "__EMPTY_3": "စိတ်ကူးချိုချို",
+    "__EMPTY_4": 2017
+  },
+  {
+    "#VALUE!": "OTL00183",
+    "__EMPTY": "100-0040",
+    "__EMPTY_1": "အောင်မြင်ရေးဘဝဒဿနများ",
+    "__EMPTY_2": "စည်တိုင်းအရှင်အစ္ဆရိယ",
+    "__EMPTY_3": "တိုင်းလင်းစာပေ",
+    "__EMPTY_4": 2000
+  },
+  {
+    "#VALUE!": "OTL00184",
+    "__EMPTY": "100-0041",
+    "__EMPTY_1": "ဗုဒ္ဓ၏လူ့သဘာဝဓမ္မပညာကိုသိပ္ပံပညာဖြင့်ချဉ်းကပ်ခြင်း",
+    "__EMPTY_2": "ဆရာကြီးဦးဌေးအောင်",
+    "__EMPTY_3": "Nil",
+    "__EMPTY_4": "Nil"
+  },
+  {
+    "#VALUE!": "OTL00185",
+    "__EMPTY": "100-0042",
+    "__EMPTY_1": "စိတ်ဓာတ်ခွန်အားကိုပေးသောစာစုများ(၁)",
+    "__EMPTY_2": "ညီသစ်",
+    "__EMPTY_3": "ဓူဝံစာအုပ်တိုက်",
+    "__EMPTY_4": 2004
+  },
+  {
+    "#VALUE!": "OTL00186",
+    "__EMPTY": "100-0043",
+    "__EMPTY_1": "စိတ်ဓာတ်ခွန်အားကိုပေးသောစာစုများ(၂)",
+    "__EMPTY_2": "ညီသစ်",
+    "__EMPTY_3": "ဓူဝံစာအုပ်တိုက်",
+    "__EMPTY_4": 2004
+  },
+  {
+    "#VALUE!": "OTL00187",
+    "__EMPTY": "100-0044",
+    "__EMPTY_1": "စိတ်ဓာတ်ခွန်အားကိုပေးသောစာစုများ(၃)",
+    "__EMPTY_2": "ညီသစ်",
+    "__EMPTY_3": "ဓူဝံစာအုပ်တိုက်",
+    "__EMPTY_4": 2004
+  },
+  {
+    "#VALUE!": "OTL00188",
+    "__EMPTY": "100-0045",
+    "__EMPTY_1": "စိတ်ဓာတ်ခွန်အားကိုပေးသောစာစုများ(၄)",
+    "__EMPTY_2": "ညီသစ်",
+    "__EMPTY_3": "ဓူဝံစာအုပ်တိုက်",
+    "__EMPTY_4": 2004
+  },
+  {
+    "#VALUE!": "OTL00189",
+    "__EMPTY": "100-0046",
+    "__EMPTY_1": "စိတ်ဓာတ်ခွန်အားကိုပေးသောစာစုများ(၅)",
+    "__EMPTY_2": "ညီသစ်",
+    "__EMPTY_3": "ဓူဝံစာအုပ်တိုက်",
+    "__EMPTY_4": 2004
+  },
+  {
+    "#VALUE!": "OTL00190",
+    "__EMPTY": "100-0047",
+    "__EMPTY_1": "အရက်မူးယစ်ဆေးဝါးနှင့်စိတ်ကျန်းမာရေးပြဿနာ",
+    "__EMPTY_2": "မောင်မောင်ထွန်းအောင်",
+    "__EMPTY_3": "ဟိန်းထက်စာပေ",
+    "__EMPTY_4": 2016
+  },
+  {
+    "#VALUE!": "OTL00191",
+    "__EMPTY": "100-0048",
+    "__EMPTY_1": "စိတ်၏ဖိစီးမှုကိုလျှော့ချနည်းများ",
+    "__EMPTY_2": "ဒေါက်တာသိန်းလွင်",
+    "__EMPTY_3": "တူဒေးစာပေ",
+    "__EMPTY_4": 2003
+  },
+  {
+    "#VALUE!": "OTL00192",
+    "__EMPTY": "100-0049",
+    "__EMPTY_1": "ကိုယ်ကျင့်တည်ကြည်ခြင်းနှင့်အဆင့်မြင့်ခရီးသည်",
+    "__EMPTY_2": "နန္ဒာသိန်းဇံ",
+    "__EMPTY_3": "လှိုင်းသစ်စာပေ",
+    "__EMPTY_4": 1990
+  },
+  {
+    "#VALUE!": "OTL00193",
+    "__EMPTY": "100-0050",
+    "__EMPTY_1": "ခရောင်းလမ်းကိုဖြတ်ကျော်ခြင်း",
+    "__EMPTY_2": "နန္ဒာသိန်းဇံ",
+    "__EMPTY_3": "လှိုင်းသစ်စာပေ",
+    "__EMPTY_4": 1983
+  },
+  {
+    "#VALUE!": "OTL00194",
+    "__EMPTY": "100-0051",
+    "__EMPTY_1": "စိတ်အဆင့်ဆင့်မြင့်တက်ခြင်းသဘာဝ",
+    "__EMPTY_2": "နန္ဒာသိန်းဇံ",
+    "__EMPTY_3": "လှိုင်းသစ်စာပေ",
+    "__EMPTY_4": 1989
+  },
+  {
+    "#VALUE!": "OTL00195",
+    "__EMPTY": "100-0052",
+    "__EMPTY_1": "တွေးချိန်ချင့်စရာ",
+    "__EMPTY_2": "နန္ဒာသိန်းဇံ",
+    "__EMPTY_3": "လှိုင်းသစ်စာပေ",
+    "__EMPTY_4": 2013
+  },
+  {
+    "#VALUE!": "OTL00196",
+    "__EMPTY": "100-0053",
+    "__EMPTY_1": "နောင်တကင်းရာသို့",
+    "__EMPTY_2": "နန္ဒာသိန်းဇံ",
+    "__EMPTY_3": "လှိုင်းသစ်စာပေ",
+    "__EMPTY_4": 2009
+  },
+  {
+    "#VALUE!": "OTL00197",
+    "__EMPTY": "100-0054",
+    "__EMPTY_1": "ဘဝအဓိပ္ပာယ်နှင့်ဘဝသစ္စာ",
+    "__EMPTY_2": "နန္ဒာသိန်းဇံ",
+    "__EMPTY_3": "လှိုင်းသစ်စာပေ",
+    "__EMPTY_4": 1989
+  },
+  {
+    "#VALUE!": "OTL00198",
+    "__EMPTY": "100-0055",
+    "__EMPTY_1": "မနက်ဖြန်များကိုဖြတ်သန်းနေသောစိတ်ကူးများ",
+    "__EMPTY_2": "နန္ဒာသိန်းဇံ",
+    "__EMPTY_3": "စစ်သည်တော်စာပေ",
+    "__EMPTY_4": 2003
+  },
+  {
+    "#VALUE!": "OTL00199",
+    "__EMPTY": "100-0056",
+    "__EMPTY_1": "မှန်သောစကားကိုဆိုခြင်း",
+    "__EMPTY_2": "နန္ဒာသိန်းဇံ",
+    "__EMPTY_3": "လှိုင်းသစ်စာပေ",
+    "__EMPTY_4": 1988
+  },
+  {
+    "#VALUE!": "OTL00200",
+    "__EMPTY": "100-0057",
+    "__EMPTY_1": "မိတ်ကောင်းဆွေကောင်းနှင့်ခရီးသွားခြင်း",
+    "__EMPTY_2": "နန္ဒာသိန်းဇံ",
+    "__EMPTY_3": "လှိုင်းသစ်စာပေ",
+    "__EMPTY_4": 1989
+  },
+  {
+    "#VALUE!": "OTL00201",
+    "__EMPTY": "100-0058",
+    "__EMPTY_1": "သမုဒ်ပင်လယ်ပြာနှိုင်းပမာ",
+    "__EMPTY_2": "နန္ဒာသိန်းဇံ",
+    "__EMPTY_3": "လှိုင်းသစ်စာပေ",
+    "__EMPTY_4": 2008
+  },
+  {
+    "#VALUE!": "OTL00202",
+    "__EMPTY": "100-0059",
+    "__EMPTY_1": "အတွေးအခေါ်တို့လွင့်မြောခြင်းနှင့်လူ၏ဆောက်တည်ရာ",
+    "__EMPTY_2": "နန္ဒာသိန်းဇံ",
+    "__EMPTY_3": "လှိုင်းသစ်စာပေ",
+    "__EMPTY_4": 2009
+  },
+  {
+    "#VALUE!": "OTL00203",
+    "__EMPTY": "100-0060",
+    "__EMPTY_1": "အနေခက်အောင်ကူညီကြသူများ",
+    "__EMPTY_2": "နန္ဒာသိန်းဇံ",
+    "__EMPTY_3": "လှိုင်းသစ်စာပေ",
+    "__EMPTY_4": 2011
+  },
+  {
+    "#VALUE!": "OTL00204",
+    "__EMPTY": "100-0061",
+    "__EMPTY_1": "အရိမဒ္ဒနမှတွေးမြင်ရနံ့တို့ဝေ့ပျံနေဆဲ",
+    "__EMPTY_2": "နန္ဒာသိန်းဇံ",
+    "__EMPTY_3": "လှိုင်းသစ်စာပေ",
+    "__EMPTY_4": 2011
+  },
+  {
+    "#VALUE!": "OTL00205",
+    "__EMPTY": "100-0062",
+    "__EMPTY_1": "အသွင်သဏ္ဍာန်တို့၏နောက်ကွယ်၌",
+    "__EMPTY_2": "နန္ဒာသိန်းဇံ",
+    "__EMPTY_3": "လှိုင်းသစ်စာပေ",
+    "__EMPTY_4": 1995
+  },
+  {
+    "#VALUE!": "OTL00206",
+    "__EMPTY": "100-0063",
+    "__EMPTY_1": "စိတ်ပညာ",
+    "__EMPTY_2": "ပီမိုးနင်း",
+    "__EMPTY_3": "မိုးကျော်စာပေ",
+    "__EMPTY_4": 2004
+  },
+  {
+    "#VALUE!": "OTL00207",
+    "__EMPTY": "100-0064",
+    "__EMPTY_1": "ကြီးကြီးတွေးမြင့်မြင့်ကြံ",
+    "__EMPTY_2": "ဗန်းမော်သိန်းဖေ",
+    "__EMPTY_3": "ပဉ္စဂံစာပေ",
+    "__EMPTY_4": 2018
+  },
+  {
+    "#VALUE!": "OTL00208",
+    "__EMPTY": "100-0065",
+    "__EMPTY_1": "တားရော့ဟောနည်း(1)",
+    "__EMPTY_2": "မင်းသိင်္ခ",
+    "__EMPTY_3": "ဝင်းထွန်းပုံနှိပ်တိုက်",
+    "__EMPTY_4": 2001
+  },
+  {
+    "#VALUE!": "OTL00209",
+    "__EMPTY": "100-0066",
+    "__EMPTY_1": "နျူမရော်လော်ဂျီ၊ဂျစ်ပစီဟောကိန်း",
+    "__EMPTY_2": "မင်းသိင်္ခ",
+    "__EMPTY_3": "မရမ်းတလင်းစာပေ",
+    "__EMPTY_4": 2006
+  },
+  {
+    "#VALUE!": "OTL00210",
+    "__EMPTY": "100-0067",
+    "__EMPTY_1": "မနောမယထမင်းဝိုင်း",
+    "__EMPTY_2": "မင်းသိင်္ခ",
+    "__EMPTY_3": "လာဘ်မိုးစွေစာပေ",
+    "__EMPTY_4": 2002
+  },
+  {
+    "#VALUE!": "OTL00211",
+    "__EMPTY": "100-0068",
+    "__EMPTY_1": "မနောမယမြသက်လယ်",
+    "__EMPTY_2": "မင်းသိင်္ခ",
+    "__EMPTY_3": "လာဘ်မိုးစွေစာပေ",
+    "__EMPTY_4": 2005
+  },
+  {
+    "#VALUE!": "OTL00212",
+    "__EMPTY": "100-0069",
+    "__EMPTY_1": "ရမ်းတလင်းလက်ဆောင်ဂမ္ဘီရယတြာများ_စတုတ္ထတွဲ",
+    "__EMPTY_2": "မင်းသိင်္ခ",
+    "__EMPTY_3": "မရမ်းတလင်းစာပေ",
+    "__EMPTY_4": 2008
+  },
+  {
+    "#VALUE!": "OTL00213",
+    "__EMPTY": "100-0070",
+    "__EMPTY_1": "ယတြာများ",
+    "__EMPTY_2": "မင်းသိင်္ခ",
+    "__EMPTY_3": "လာဘ်မိုးစွေစာပေ",
+    "__EMPTY_4": 2004
+  },
+  {
+    "#VALUE!": "OTL00214",
+    "__EMPTY": "100-0071",
+    "__EMPTY_1": "သင့်ဘဝတစ်သက်တာ_မရမ်းတလင်းယတြာ",
+    "__EMPTY_2": "မင်းသိင်္ခ",
+    "__EMPTY_3": "မရမ်းတလင်းစာပေ",
+    "__EMPTY_4": 2018
+  },
+  {
+    "#VALUE!": "OTL00215",
+    "__EMPTY": "100-0072",
+    "__EMPTY_1": "ဒေါသနှင့်မိတ်ဆွေဖွဲ့ခြင်း",
+    "__EMPTY_2": "မျိုးလွင်(MBA)",
+    "__EMPTY_3": "သားငယ်စာပေ",
+    "__EMPTY_4": 2022
+  },
+  {
+    "#VALUE!": "OTL00216",
+    "__EMPTY": "100-0073",
+    "__EMPTY_1": "တီထွင်တွေး",
+    "__EMPTY_2": "မြတ်ငြိမ်း",
+    "__EMPTY_3": "စိတ်ကူးချိုချို",
+    "__EMPTY_4": 2001
+  },
+  {
+    "#VALUE!": "OTL00217",
+    "__EMPTY": "100-0074",
+    "__EMPTY_1": "သူစိတ်ဓာတ်ကျတိုင်းဖတ်ဖို့",
+    "__EMPTY_2": "မိုးရှင်း(MIT)",
+    "__EMPTY_3": "Myamnar Heritage စာပေ",
+    "__EMPTY_4": 2016
+  },
+  {
+    "#VALUE!": "OTL00218",
+    "__EMPTY": "100-0075",
+    "__EMPTY_1": "ပေါင်းရခက်တာသူလားသင်လား",
+    "__EMPTY_2": "မောင်ချို(စိတ်ပညာ)",
+    "__EMPTY_3": "စိတ်ကူးချိုချို",
+    "__EMPTY_4": 2019
+  },
+  {
+    "#VALUE!": "OTL00219",
+    "__EMPTY": "100-0076",
+    "__EMPTY_1": "ခွင့်လွှတ်ပေးလိုက်ပါ",
+    "__EMPTY_2": "မောင်ဘုန်း(သပြု)",
+    "__EMPTY_3": "မိုးကောင်းမြေစာပေ",
+    "__EMPTY_4": "nil"
+  },
+  {
+    "#VALUE!": "OTL00220",
+    "__EMPTY": "100-0077",
+    "__EMPTY_1": "ကြယ်များဆီသို့",
+    "__EMPTY_2": "မောင်ဝံသ",
+    "__EMPTY_3": "ယုံကြည်ချက်စာပေ",
+    "__EMPTY_4": 2002
+  },
+  {
+    "#VALUE!": "OTL00221",
+    "__EMPTY": "100-0078",
+    "__EMPTY_1": "စတီးဝဲလ်နှင့်မြန်မာပြည်စစ်မျက်နှာ",
+    "__EMPTY_2": "မောင်ဝံသ",
+    "__EMPTY_3": "သီဟရတနာစာပေ",
+    "__EMPTY_4": 2004
+  },
+  {
+    "#VALUE!": "OTL00222",
+    "__EMPTY": "100-0079",
+    "__EMPTY_1": "ဒုတိယအတွေး",
+    "__EMPTY_2": "မောင်ဝံသ",
+    "__EMPTY_3": "ဒေါင်းစာပေ",
+    "__EMPTY_4": 2003
+  },
+  {
+    "#VALUE!": "OTL00223",
+    "__EMPTY": "100-0080",
+    "__EMPTY_1": "ပြောချင်လွန်းလို့",
+    "__EMPTY_2": "မောင်ဝံသ",
+    "__EMPTY_3": "ဒေါင်းစာပေ",
+    "__EMPTY_4": 2013
+  },
+  {
+    "#VALUE!": "OTL00224",
+    "__EMPTY": "100-0081",
+    "__EMPTY_1": "မှန်တာပြောသစ္စာ",
+    "__EMPTY_2": "မောင်ဝံသ",
+    "__EMPTY_3": "ဒေါင်းစာပေ",
+    "__EMPTY_4": 2013
+  },
+  {
+    "#VALUE!": "OTL00225",
+    "__EMPTY": "100-0082",
+    "__EMPTY_1": "ဂန္တဝင်ဦးသျှောင်မင်းသားလုပ်ထုံးကျမ်း",
+    "__EMPTY_2": "မောရိသျှ",
+    "__EMPTY_3": "nil",
+    "__EMPTY_4": "nil"
+  },
+  {
+    "#VALUE!": "OTL00226",
+    "__EMPTY": "100-0083",
+    "__EMPTY_1": "လူ့သဘောလူ့မနောအနှစ်ချုပ်",
+    "__EMPTY_2": "မောရိသျှ",
+    "__EMPTY_3": "nil",
+    "__EMPTY_4": "nil"
+  },
+  {
+    "#VALUE!": "OTL00227",
+    "__EMPTY": "100-0084",
+    "__EMPTY_1": "အာဏာစက်နည်းဥပဒေသ(၄၈)",
+    "__EMPTY_2": "မောရိသျှ",
+    "__EMPTY_3": "nil",
+    "__EMPTY_4": "nil"
+  },
+  {
+    "#VALUE!": "OTL00228",
+    "__EMPTY": "100-0085",
+    "__EMPTY_1": "ဗုဒ္ဓဝါဒတွေးခေါ်မြော်မြင်ရေး",
+    "__EMPTY_2": "ရွှေဥဒေါင်း",
+    "__EMPTY_3": "ယောမင်းကြီးစာပေ",
+    "__EMPTY_4": 2013
+  },
+  {
+    "#VALUE!": "OTL00229",
+    "__EMPTY": "100-0086",
+    "__EMPTY_1": "ဆိုက်ဝါးထည့်ခြင်းအနုပညာ",
+    "__EMPTY_2": "ရဲမင်းဝင်း",
+    "__EMPTY_3": "nil",
+    "__EMPTY_4": "nil"
+  },
+  {
+    "#VALUE!": "OTL00230",
+    "__EMPTY": "100-0087",
+    "__EMPTY_1": "စိတ်၏အမှောင်ဘက်ခြမ်း",
+    "__EMPTY_2": "လှိုင်ကြီး",
+    "__EMPTY_3": "ကလောင်သစ်စာပေ",
+    "__EMPTY_4": 2024
+  },
+  {
+    "#VALUE!": "OTL00231",
+    "__EMPTY": "100-0088",
+    "__EMPTY_1": "ငါ့ကိုယ်ငါပြောင်းလဲခြင်း",
+    "__EMPTY_2": "အံ့ဘုန်းခန့်ကျော်",
+    "__EMPTY_3": "ဇလပ်နီစာပေ",
+    "__EMPTY_4": 2024
+  },
+  {
+    "#VALUE!": "OTL00232",
+    "__EMPTY": "100-0089",
+    "__EMPTY_1": "လမ်းခွဲမှာဝမ်းနည်းစရာမလိုပါ",
+    "__EMPTY_2": "အရှင်ဇဝန(ရွှေကုန်းမြေ)",
+    "__EMPTY_3": "ကိုလတ်စာပေ",
+    "__EMPTY_4": 2023
+  },
+  {
+    "#VALUE!": "OTL00233",
+    "__EMPTY": "100-0090",
+    "__EMPTY_1": "ငြိမ်းချမ်းစိတ်နှင့်တိုးတက်ကြွယ်ဝပါ",
+    "__EMPTY_2": "အောင်ဝင်း(စိတ်ပညာ)",
+    "__EMPTY_3": "ခြသေ့်မင်း",
+    "__EMPTY_4": 1982
+  },
+  {
+    "#VALUE!": "OTL00234",
+    "__EMPTY": "100-0091",
+    "__EMPTY_1": "စွမ်းပကားကြီးမားထက်မြက်ရေး",
+    "__EMPTY_2": "အောင်ဝင်း(စိတ်ပညာ)",
+    "__EMPTY_3": "ယုဝစာပေ",
+    "__EMPTY_4": 1975
+  },
+  {
+    "#VALUE!": "OTL00235",
+    "__EMPTY": "100-0092",
+    "__EMPTY_1": "စိတ်၏စွမ်းအင်",
+    "__EMPTY_2": "အောင်ဝင်း(စိတ်ပညာ)",
+    "__EMPTY_3": "ခြသေ့်မင်း",
+    "__EMPTY_4": 1979
+  },
+  {
+    "#VALUE!": "OTL00236",
+    "__EMPTY": "100-0093",
+    "__EMPTY_1": "စိတ်ပညာဖြင့်ချမ်းသာရာသို့",
+    "__EMPTY_2": "အောင်ဝင်း(စိတ်ပညာ)",
+    "__EMPTY_3": "ခြသေ့်မင်း",
+    "__EMPTY_4": 1984
+  },
+  {
+    "#VALUE!": "OTL00237",
+    "__EMPTY": "100-0094",
+    "__EMPTY_1": "စိတ်ပညာသမားအားထားကျင့်စဉ်",
+    "__EMPTY_2": "အောင်ဝင်း(စိတ်ပညာ)",
+    "__EMPTY_3": "ခြသေ့်မင်း",
+    "__EMPTY_4": 1986
+  },
+  {
+    "#VALUE!": "OTL00238",
+    "__EMPTY": "100-0095",
+    "__EMPTY_1": "နုပျိုစွာအသက်ရှည်ပါ",
+    "__EMPTY_2": "အောင်ဝင်း(စိတ်ပညာ)",
+    "__EMPTY_3": "ခြသေ့်မင်း",
+    "__EMPTY_4": 1987
+  },
+  {
+    "#VALUE!": "OTL00239",
+    "__EMPTY": "100-0096",
+    "__EMPTY_1": "သိပ္ပံနည်းကျသဘာဝကု",
+    "__EMPTY_2": "အောင်ဝင်း(စိတ်ပညာ)",
+    "__EMPTY_3": "ခြသေ့်မင်း",
+    "__EMPTY_4": 1978
+  },
+  {
+    "#VALUE!": "OTL00240",
+    "__EMPTY": "100-0097",
+    "__EMPTY_1": "အောင်မြင်ပျော်ရွှင်စွာနေထိုင်ပါ",
+    "__EMPTY_2": "အောင်ဝင်း(စိတ်ပညာ)",
+    "__EMPTY_3": "သူရိယစာပေ",
+    "__EMPTY_4": 2009
+  },
+  {
+    "#VALUE!": "OTL00241",
+    "__EMPTY": "100-0098",
+    "__EMPTY_1": "မိတ္တဗလဋီကာ",
+    "__EMPTY_2": "ဦးနု",
+    "__EMPTY_3": "ငါတို့စာပေ",
+    "__EMPTY_4": 2019
+  },
+  {
+    "#VALUE!": "OTL00242",
+    "__EMPTY": "100-0099",
+    "__EMPTY_1": "နီးနီးဝေးဝေးအတွေးလက်ဆောင်",
+    "__EMPTY_2": "ဦးဘုန်း(ဓါတု)",
+    "__EMPTY_3": "ပန်းဝေဝေစာပေ",
+    "__EMPTY_4": 2008
+  },
+  {
+    "#VALUE!": "OTL00243",
+    "__EMPTY": "100-0100",
+    "__EMPTY_1": "အောင်မြင်ရေးနှင့်စိတ်တန်ခိုး",
+    "__EMPTY_2": "ဦးမောင်မြင့်",
+    "__EMPTY_3": "ယဉ်မျိုးစာပေ",
+    "__EMPTY_4": 2017
+  },
+  {
+    "#VALUE!": "OTL00244",
+    "__EMPTY": "100-0101",
+    "__EMPTY_1": "စံလွဲစိတ်ပညာ",
+    "__EMPTY_2": "ဦးအုန်းဖေ",
+    "__EMPTY_3": "အရုဏ်ကောင်းကင်",
+    "__EMPTY_4": 2001
+  }
+]

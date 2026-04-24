@@ -1,0 +1,221 @@
+[
+  {
+    "#VALUE!": "ACCESSION REGISTER"
+  },
+  {
+    "#VALUE!": "Accession Number",
+    "__EMPTY": "Class Number",
+    "__EMPTY_1": "Book Name",
+    "__EMPTY_2": "Author Name",
+    "__EMPTY_3": "Publisher",
+    "__EMPTY_4": "Year"
+  },
+  {
+    "#VALUE!": "OTL00462",
+    "__EMPTY": "490-0001",
+    "__EMPTY_1": "Can Do Thai",
+    "__EMPTY_2": "Arnon Plianchaisuk",
+    "__EMPTY_3": "Innovative Language Learning",
+    "__EMPTY_4": 2023
+  },
+  {
+    "#VALUE!": "OTL00463",
+    "__EMPTY": "490-0002",
+    "__EMPTY_1": "Thai Natural Language Processing",
+    "__EMPTY_2": "Chalermpol Tapsai",
+    "__EMPTY_3": "Springer",
+    "__EMPTY_4": 2021
+  },
+  {
+    "#VALUE!": "OTL00464",
+    "__EMPTY": "490-0003",
+    "__EMPTY_1": "Say It Right in Thai",
+    "__EMPTY_2": "Clyde Peters",
+    "__EMPTY_3": "Mc Graw Hill",
+    "__EMPTY_4": 2010
+  },
+  {
+    "#VALUE!": "OTL00465",
+    "__EMPTY": "490-0004",
+    "__EMPTY_1": "Thai An Essential Grammar",
+    "__EMPTY_2": "David Smyth",
+    "__EMPTY_3": "Routledge",
+    "__EMPTY_4": 2002
+  },
+  {
+    "#VALUE!": "OTL00466",
+    "__EMPTY": "490-0005",
+    "__EMPTY_1": "Basic Thai for Myanmar Migrant Workers",
+    "__EMPTY_2": "IOM",
+    "__EMPTY_3": "nil",
+    "__EMPTY_4": "nil"
+  },
+  {
+    "#VALUE!": "OTL00467",
+    "__EMPTY": "490-0006",
+    "__EMPTY_1": "Intermediate Thai Reading Excercises",
+    "__EMPTY_2": "Jacob Y de Groot",
+    "__EMPTY_3": "Prince of Songkhla University",
+    "__EMPTY_4": 2010
+  },
+  {
+    "#VALUE!": "OTL00468",
+    "__EMPTY": "490-0007",
+    "__EMPTY_1": "Thai for Beginners",
+    "__EMPTY_2": "Jacob Y de Groot",
+    "__EMPTY_3": "Prince of Songkhla University",
+    "__EMPTY_4": 2010
+  },
+  {
+    "#VALUE!": "OTL00469",
+    "__EMPTY": "490-0008",
+    "__EMPTY_1": "Thai Stories for Language Learners",
+    "__EMPTY_2": "Jintana Rattanakhemakorn, et al.",
+    "__EMPTY_3": "Tuttle Publishing",
+    "__EMPTY_4": 2022
+  },
+  {
+    "#VALUE!": "OTL00470",
+    "__EMPTY": "490-0009",
+    "__EMPTY_1": "Thai-Myanmar Dictionary",
+    "__EMPTY_2": "Naresuan University",
+    "__EMPTY_3": "nil",
+    "__EMPTY_4": "nil"
+  },
+  {
+    "#VALUE!": "OTL00471",
+    "__EMPTY": "490-0010",
+    "__EMPTY_1": "199 Everyday Thai Phrases",
+    "__EMPTY_2": "Smart Tourist",
+    "__EMPTY_3": "The Thailand Life",
+    "__EMPTY_4": 2014
+  },
+  {
+    "#VALUE!": "OTL00472",
+    "__EMPTY": "490-0011",
+    "__EMPTY_1": "A Dictionary of Japanese Particles",
+    "__EMPTY_2": "Sue A Kawashima",
+    "__EMPTY_3": "Kodanshe International",
+    "__EMPTY_4": 1999
+  },
+  {
+    "#VALUE!": "OTL00473",
+    "__EMPTY": "490-0012",
+    "__EMPTY_1": "Thai Language Textbook for Foreigners",
+    "__EMPTY_2": "Unknown",
+    "__EMPTY_3": "nil",
+    "__EMPTY_4": "nil"
+  },
+  {
+    "#VALUE!": "OTL00474",
+    "__EMPTY": "490-0013",
+    "__EMPTY_1": "ပျူအဘိဓာန်",
+    "__EMPTY_2": "ခင်မောင်သန်း",
+    "__EMPTY_3": "သီတဂူကမ္ဘာဗုဒ္ဓတက္ကသိုလ်",
+    "__EMPTY_4": 2013
+  },
+  {
+    "#VALUE!": "OTL00475",
+    "__EMPTY": "490-0014",
+    "__EMPTY_1": "အလွယ်ကူဆုံးထိုင်းစကားပြော",
+    "__EMPTY_2": "ထက်အောင်ဇင်",
+    "__EMPTY_3": "ပန်းဝေစာပေ",
+    "__EMPTY_4": 2011
+  },
+  {
+    "#VALUE!": "OTL00476",
+    "__EMPTY": "490-0015",
+    "__EMPTY_1": "ခရီးဆောင်မြန်မာအဘိဓာန်",
+    "__EMPTY_2": "ပညာရေးဝန်ကြီးဌာန",
+    "__EMPTY_3": "မြန်မာစာအဖွဲ့ဦးစီးဌာန",
+    "__EMPTY_4": 1999
+  },
+  {
+    "#VALUE!": "OTL00477",
+    "__EMPTY": "490-0016",
+    "__EMPTY_1": "မြန်မာစာလုံးပေါင်းသတ်ပုံကျမ်း",
+    "__EMPTY_2": "ပညာရေးဝန်ကြီးဌာန",
+    "__EMPTY_3": "မြန်မာစာအဖွဲ့ဦးစီးဌာန",
+    "__EMPTY_4": 2003
+  },
+  {
+    "#VALUE!": "OTL00478",
+    "__EMPTY": "490-0017",
+    "__EMPTY_1": "မြန်မာစာမြန်မာစကား",
+    "__EMPTY_2": "ပညာရေးဝန်ကြီးဌာန",
+    "__EMPTY_3": "မြန်မာစာအဖွဲ့ဦးစီးဌာန",
+    "__EMPTY_4": 1993
+  },
+  {
+    "#VALUE!": "OTL00479",
+    "__EMPTY": "490-0018",
+    "__EMPTY_1": "မြန်မာစာပေ",
+    "__EMPTY_2": "မြန်မာနိုင်ငံစာနယ်ဇင်းအဖွဲ့",
+    "__EMPTY_3": "မြန်မာနိုင်ငံစာပေနှင့်စာနယ်ဇင်းအဖွဲ့",
+    "__EMPTY_4": 1998
+  },
+  {
+    "#VALUE!": "OTL00480",
+    "__EMPTY": "490-0019",
+    "__EMPTY_1": "ဂုဏ်အလင်္ကာရသသင်ကြားရေး",
+    "__EMPTY_2": "မောင်ခင်မင်(ဓနုဖြူ)",
+    "__EMPTY_3": "ဖူးပွင့်ဝေဝေစာအုပ်တိုက်",
+    "__EMPTY_4": "nil"
+  },
+  {
+    "#VALUE!": "OTL00481",
+    "__EMPTY": "490-0020",
+    "__EMPTY_1": "ငယ်ပေါင်းကြီးဖော်မြန်မာစာနှင့်အရေးအသားပြဿနာများ",
+    "__EMPTY_2": "မောင်ခင်မင်(ဓနုဖြူ)",
+    "__EMPTY_3": "nil",
+    "__EMPTY_4": "nil"
+  },
+  {
+    "#VALUE!": "OTL00482",
+    "__EMPTY": "490-0021",
+    "__EMPTY_1": "မေးလိုရာရာမြန်မာစာ၂၀၁၀",
+    "__EMPTY_2": "မောင်ခင်မင်(ဓနုဖြူ)",
+    "__EMPTY_3": "မင်္ဂလာမောင်မယ်",
+    "__EMPTY_4": 2010
+  },
+  {
+    "#VALUE!": "OTL00483",
+    "__EMPTY": "490-0022",
+    "__EMPTY_1": "မေးလိုရာရာမြန်မာစာ၂၀၁၁",
+    "__EMPTY_2": "မောင်ခင်မင်(ဓနုဖြူ)",
+    "__EMPTY_3": "မင်္ဂလာမောင်မယ်",
+    "__EMPTY_4": 2011
+  },
+  {
+    "#VALUE!": "OTL00484",
+    "__EMPTY": "490-0023",
+    "__EMPTY_1": "မြန်မာစကားပုံအဘိဓာန်",
+    "__EMPTY_2": "လှသမိန်",
+    "__EMPTY_3": "ပညာနန္ဒပုံနှိပ်တိုက်",
+    "__EMPTY_4": 1955
+  },
+  {
+    "#VALUE!": "OTL00485",
+    "__EMPTY": "490-0024",
+    "__EMPTY_1": "နန်းစကားမန်းစကား၊ မြန်မာတို့ရဲ့မြန်မာစကား",
+    "__EMPTY_2": "လူထုစိန်ဝင်း",
+    "__EMPTY_3": "နှစ်ကာလများစာအုပ်တိုက်",
+    "__EMPTY_4": 2010
+  },
+  {
+    "#VALUE!": "OTL00486",
+    "__EMPTY": "490-0025",
+    "__EMPTY_1": "စကားလုံးပုံသဏ္ဍာန်အဘိဓာန်",
+    "__EMPTY_2": "သင်းသင်းနိုင်",
+    "__EMPTY_3": "သာလွန်စာအုပ်တိုက်",
+    "__EMPTY_4": 2010
+  },
+  {
+    "#VALUE!": "OTL00487",
+    "__EMPTY": "490-0026",
+    "__EMPTY_1": "မြန်မာအင်္ဂလိပ်ရုပ်ပြအဘိဓာန်",
+    "__EMPTY_2": "အမည်မသိ",
+    "__EMPTY_3": "nil",
+    "__EMPTY_4": "nil"
+  }
+]

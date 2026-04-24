@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="my">
   <head>
@@ -9,12 +10,13 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
+      html { scroll-behavior: smooth; }
       body { 
         font-family: 'Inter', sans-serif; 
-        user-select: none; /* Kiosk mode: prevent text selection */
+        user-select: none;
         -webkit-user-select: none;
-        touch-action: manipulation; /* Improve touch response */
-        overscroll-behavior-y: none; /* Prevent pull-to-refresh on some touchscreens */
+        touch-action: manipulation;
+        overscroll-behavior-y: none;
       }
       .no-scrollbar::-webkit-scrollbar { display: none; }
       .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
@@ -23,6 +25,11 @@
         50% { transform: scale(1.05); opacity: 0.85; }
       }
       .animate-pulse-slow { animation: pulse-slow 3s ease-in-out infinite; }
+      
+      /* 3D Effects */
+      .perspective-1000 { perspective: 1000px; }
+      .rotate-y-12 { transform: rotateY(12deg); }
+      .hover\:rotate-y-12:hover { transform: rotateY(12deg); }
     </style>
   <script type="importmap">
 {
@@ -35,8 +42,10 @@
   }
 }
 </script>
+<link rel="stylesheet" href="/index.css">
 </head>
   <body>
     <div id="root"></div>
-  </body>
+  <script type="module" src="/index.tsx"></script>
+</body>
 </html>

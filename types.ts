@@ -1,11 +1,10 @@
-
 export interface Book {
   id: number;
   title: string;
   author: string;
   ddc: string;
   isFeatured: boolean;
-  status?: string; // Optional now, as we don't display it
+  views: number; // New property to track most read
   year: string;
   coverUrl: string;
   pdfUrl: string;
@@ -23,11 +22,16 @@ export interface User {
   id: string;
   name: string;
   username: string;
-  password: string; // In a real app, hash this. For offline Pi, plain text is acceptable if secured physically.
-  role: 'admin' | 'user';
+  password: string;
+  gender?: string;
+  region?: string;
+  age?: string;
+  bornYear?: string;
+  libraryName?: string;
+  role: "admin" | "user";
   joinedDate: string;
-  readHistory: number[]; // Array of Book IDs
-  currentlyReading: number[]; // Array of Book IDs
+  readHistory: number[];
+  currentlyReading: number[];
 }
 
 export interface Achievement {
@@ -45,7 +49,13 @@ export interface DDCCategory {
   color: string;
 }
 
-export type Tab = "home" | "browse" | "list" | "requests" | "profile" | "admin_dashboard";
+export type Tab =
+  | "home"
+  | "browse"
+  | "list"
+  | "requests"
+  | "profile"
+  | "admin_dashboard";
 
 export interface LoginForm {
   username: string;

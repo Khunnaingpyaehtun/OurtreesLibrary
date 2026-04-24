@@ -1,0 +1,45 @@
+[
+  {
+    "#VALUE!": "ACCESSION REGISTER"
+  },
+  {
+    "#VALUE!": "Accession Number",
+    "__EMPTY": "Class Number",
+    "__EMPTY_1": "Book Name",
+    "__EMPTY_2": "Author Name",
+    "__EMPTY_3": "Publisher",
+    "__EMPTY_4": "Year"
+  },
+  {
+    "#VALUE!": "OTL00698",
+    "__EMPTY": "770-0001",
+    "__EMPTY_1": "DSLR Photography for Beginners",
+    "__EMPTY_2": "Brain Black",
+    "__EMPTY_3": "Brain Black",
+    "__EMPTY_4": 2013
+  },
+  {
+    "#VALUE!": "OTL00699",
+    "__EMPTY": "770-0002",
+    "__EMPTY_1": "50 Fast Digital Camera Techniques",
+    "__EMPTY_2": "Gregory Georges",
+    "__EMPTY_3": "Wiley Publishing",
+    "__EMPTY_4": 2003
+  },
+  {
+    "#VALUE!": "OTL00700",
+    "__EMPTY": "770-0003",
+    "__EMPTY_1": "Digital Photography Beginner's Guide",
+    "__EMPTY_2": "Kyaw Phyo Naing",
+    "__EMPTY_3": "IT Computer Training Center",
+    "__EMPTY_4": 2022
+  },
+  {
+    "#VALUE!": "OTL00701",
+    "__EMPTY": "770-0004",
+    "__EMPTY_1": "Click! The No Nonsense Guide to Digital Cameras",
+    "__EMPTY_2": "Ron White",
+    "__EMPTY_3": "McGraw-Hill",
+    "__EMPTY_4": 2003
+  }
+]

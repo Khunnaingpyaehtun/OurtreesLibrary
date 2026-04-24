@@ -1,0 +1,29 @@
+[
+  {
+    "#VALUE!": "ACCESSION REGISTER"
+  },
+  {
+    "#VALUE!": "Accession Number",
+    "__EMPTY": "Class Number",
+    "__EMPTY_1": "Book Name",
+    "__EMPTY_2": "Author Name",
+    "__EMPTY_3": "Publisher",
+    "__EMPTY_4": "Year"
+  },
+  {
+    "#VALUE!": "OTL-00447",
+    "__EMPTY": "892-0001",
+    "__EMPTY_1": "ရွှေမောင်းသံ",
+    "__EMPTY_2": "ဇော်ဂျီ",
+    "__EMPTY_3": "Union of Myanmar Literary and Journalist Organization",
+    "__EMPTY_4": 1993
+  },
+  {
+    "#VALUE!": "OTL-00448",
+    "__EMPTY": "892-0002",
+    "__EMPTY_1": "အောင်လံတော်",
+    "__EMPTY_2": "ဇော်ဂျီ",
+    "__EMPTY_3": "Union of Myanmar Literary and Journalist Organization",
+    "__EMPTY_4": 1993
+  }
+]

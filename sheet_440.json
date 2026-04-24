@@ -1,0 +1,125 @@
+[
+  {
+    "#VALUE!": "ACCESSION REGISTER"
+  },
+  {
+    "#VALUE!": "Accession Number",
+    "__EMPTY": "Class Number",
+    "__EMPTY_1": "Book Name",
+    "__EMPTY_2": "Author Name",
+    "__EMPTY_3": "Publisher",
+    "__EMPTY_4": "Year"
+  },
+  {
+    "#VALUE!": "OTL00438",
+    "__EMPTY": "440-0001",
+    "__EMPTY_1": "Syllabus Cambridge IGCSE French",
+    "__EMPTY_2": "Cambridge",
+    "__EMPTY_3": "Cambridge University Press",
+    "__EMPTY_4": 2022
+  },
+  {
+    "#VALUE!": "OTL00439",
+    "__EMPTY": "440-0002",
+    "__EMPTY_1": "French-English Bilingual Visual Dictionary",
+    "__EMPTY_2": "DK",
+    "__EMPTY_3": "DK Publishing",
+    "__EMPTY_4": 2009
+  },
+  {
+    "#VALUE!": "OTL00440",
+    "__EMPTY": "440-0003",
+    "__EMPTY_1": "Work Out French 'O' Level and GCSE",
+    "__EMPTY_2": "E.J. Neather",
+    "__EMPTY_3": "Macmillan Education",
+    "__EMPTY_4": 1986
+  },
+  {
+    "#VALUE!": "OTL00441",
+    "__EMPTY": "440-0004",
+    "__EMPTY_1": "The 100 Most Common French Words",
+    "__EMPTY_2": "French Together",
+    "__EMPTY_3": "Creative Commonds",
+    "__EMPTY_4": "nil"
+  },
+  {
+    "#VALUE!": "OTL00442",
+    "__EMPTY": "440-0005",
+    "__EMPTY_1": "French for Edexcel International GCSE (Second edition)",
+    "__EMPTY_2": "Severine Chevrier, et al.",
+    "__EMPTY_3": "Hodder Education",
+    "__EMPTY_4": 2017
+  },
+  {
+    "#VALUE!": "OTL00443",
+    "__EMPTY": "440-0006",
+    "__EMPTY_1": "Cambridge IGCSE French (Third edition)",
+    "__EMPTY_2": "Severine Chevrier, et al.",
+    "__EMPTY_3": "Hodder Education",
+    "__EMPTY_4": 2019
+  },
+  {
+    "#VALUE!": "OTL00444",
+    "__EMPTY": "440-0007",
+    "__EMPTY_1": "Cambridge IGCSE French (Second edition)",
+    "__EMPTY_2": "Jean-Claude Gills, et al.",
+    "__EMPTY_3": "Hodder Education",
+    "__EMPTY_4": 2019
+  },
+  {
+    "#VALUE!": "OTL00445",
+    "__EMPTY": "440-0008",
+    "__EMPTY_1": "French Short Stories for Beginners (vol2)",
+    "__EMPTY_2": "Lingo Mastery",
+    "__EMPTY_3": "Lingo Mastery",
+    "__EMPTY_4": 2019
+  },
+  {
+    "#VALUE!": "OTL00446",
+    "__EMPTY": "440-0009",
+    "__EMPTY_1": "Easy French Step-by-step",
+    "__EMPTY_2": "Myrna Bell Rochester",
+    "__EMPTY_3": "Mc Graw Hill",
+    "__EMPTY_4": 2009
+  },
+  {
+    "#VALUE!": "OTL00447",
+    "__EMPTY": "440-0010",
+    "__EMPTY_1": "French Vocabulary for AQA A-Level",
+    "__EMPTY_2": "Paul Humberstone, et al.",
+    "__EMPTY_3": "Hodder Education",
+    "__EMPTY_4": 2018
+  },
+  {
+    "#VALUE!": "OTL00448",
+    "__EMPTY": "440-0011",
+    "__EMPTY_1": "AQA French, A Level Year 1 and AS",
+    "__EMPTY_2": "Rob Pike, et al.",
+    "__EMPTY_3": "Oxford",
+    "__EMPTY_4": 2016
+  },
+  {
+    "#VALUE!": "OTL00449",
+    "__EMPTY": "440-0012",
+    "__EMPTY_1": "Edexcel International GCSE French",
+    "__EMPTY_2": "Yvette Grime, et al.",
+    "__EMPTY_3": "Hodder Education",
+    "__EMPTY_4": 2013
+  },
+  {
+    "#VALUE!": "OTL00450",
+    "__EMPTY": "440-0013",
+    "__EMPTY_1": "Cambridge IGCSE French Foreign Language",
+    "__EMPTY_2": "Yvette Grime, et al.",
+    "__EMPTY_3": "Hodder Education",
+    "__EMPTY_4": 2013
+  },
+  {
+    "#VALUE!": "OTL00451",
+    "__EMPTY": "440-0014",
+    "__EMPTY_1": "Edexcel International GCSE French (workbook)",
+    "__EMPTY_2": "Yvette Grime, et al.",
+    "__EMPTY_3": "Hodder Education",
+    "__EMPTY_4": 2013
+  }
+]

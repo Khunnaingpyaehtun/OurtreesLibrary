@@ -1,13 +1,38 @@
-import React, { useState, useEffect, useRef, useMemo } from 'react';
-import { ArrowLeft, Book as BookIcon, FileText, Maximize2, Minimize2, Loader2, Globe, Monitor, Info, BookOpen, ZoomIn, ZoomOut, ChevronLeft, ChevronRight, Settings2, CheckCircle } from 'lucide-react';
-import { Book } from '../types';
-import { COLORS, DDC_CATEGORIES } from '../constants';
-import { Document, Page, pdfjs } from 'react-pdf';
+import React, { useState, useEffect, useRef } from "react";
+import {
+  ArrowLeft,
+  Book as BookIcon,
+  FileText,
+  Maximize2,
+  Minimize2,
+  Loader2,
+  Globe,
+  Monitor,
+  Info,
+  BookOpen,
+  ZoomIn,
+  ZoomOut,
+  ChevronLeft,
+  ChevronRight,
+  Settings2,
+  CheckCircle,
+  AlertTriangle,
+  Sun,
+  Moon,
+  SlidersHorizontal,
+  Star,
+} from "lucide-react";
+import { Book } from "../types";
+import { COLORS, DDC_CATEGORIES } from "../constants";
+import { Document, Page, pdfjs } from "react-pdf";
 
-// Robust worker configuration
-// Ensure we have a valid version for the worker URL
-const pdfVersion = pdfjs.version || '4.4.168'; 
-pdfjs.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfVersion}/build/pdf.worker.min.mjs`;
+// Fix for "Setting up fake worker failed"
+// We use unpkg and explicitly point to the .mjs or .js worker file.
+// For react-pdf v10+, it's safer to use the same version of pdfjs-dist.
+if (typeof window !== "undefined") {
+  // Using a robust CDN URL that resolves correctly as a full URL
+  pdfjs.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@4.4.168/build/pdf.worker.min.mjs`;
+}
 
 interface BookDetailProps {
   book: Book;
@@ -16,40 +41,83 @@ interface BookDetailProps {
   isFinished: boolean;
 }
 
-type ViewerMode = 'custom' | 'native' | 'google';
+type ViewerMode = "custom" | "native" | "google";
 
-const BookDetail: React.FC<BookDetailProps> = ({ book, onBack, onFinishBook, isFinished }) => {
+const BookDetail: React.FC<BookDetailProps> = ({
+  book,
+  onBack,
+  onFinishBook,
+  isFinished,
+}) => {
   const [imgError, setImgError] = useState(false);
   const [pdfLoading, setPdfLoading] = useState(true);
+  const [pdfError, setPdfError] = useState<string | null>(null);
   const [isFullScreen, setIsFullScreen] = useState(false);
-  const [viewerMode, setViewerMode] = useState<ViewerMode>('custom');
-  
-  // Custom Reader State
+  const [viewerMode, setViewerMode] = useState<ViewerMode>("custom");
+
   const [numPages, setNumPages] = useState<number>(0);
   const [pageNumber, setPageNumber] = useState<number>(1);
   const [scale, setScale] = useState<number>(1.0);
   const [containerWidth, setContainerWidth] = useState<number>(0);
   const containerRef = useRef<HTMLDivElement>(null);
+  const [pdfFile, setPdfFile] = useState<string | Blob | null>(null);
+  const [mobileTab, setMobileTab] = useState<"info" | "reader">("info");
 
-  // Mobile Tab State
-  const [mobileTab, setMobileTab] = useState<'info' | 'reader'>('info');
+  const [brightness, setBrightness] = useState(100);
+  const [contrast, setContrast] = useState(100);
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [showSettings, setShowSettings] = useState(false);
 
   useEffect(() => {
     setPdfLoading(true);
-    setViewerMode('custom'); 
-    setMobileTab('info'); 
+    setPdfError(null);
+    setViewerMode("custom");
+    setMobileTab("info");
     setImgError(false);
     setPageNumber(1);
     setScale(1.0);
-  }, [book]);
+    setPdfFile(null);
+
+    let active = true;
+
+    const loadPdf = async () => {
+      if (!book.pdfUrl) {
+        setPdfLoading(false);
+        return;
+      }
+
+      try {
+        const response = await fetch(book.pdfUrl);
+        if (!response.ok) throw new Error(`HTTP Error ${response.status}`);
+        const blob = await response.blob();
+        if (active) setPdfFile(blob);
+      } catch (error: any) {
+        console.warn("PDF Fetch Error:", error);
+        if (active) {
+          // Fallback to direct URL
+          setPdfFile(book.pdfUrl);
+          if (
+            error.message.includes("Failed to fetch") ||
+            error.message.includes("404")
+          ) {
+            setPdfError(`ဖိုင်ရှာမတွေ့ပါ။ Link ကိုစစ်ဆေးပါ။`);
+            setPdfLoading(false);
+          }
+        }
+      }
+    };
+
+    loadPdf();
+    return () => {
+      active = false;
+    };
+  }, [book.pdfUrl]);
 
   useEffect(() => {
     if (!containerRef.current) return;
     const resizeObserver = new ResizeObserver((entries) => {
       for (const entry of entries) {
-        if (entry.contentRect.width) {
-          setContainerWidth(entry.contentRect.width);
-        }
+        if (entry.contentRect.width) setContainerWidth(entry.contentRect.width);
       }
     });
     resizeObserver.observe(containerRef.current);
@@ -59,334 +127,326 @@ const BookDetail: React.FC<BookDetailProps> = ({ book, onBack, onFinishBook, isF
   const onDocumentLoadSuccess = ({ numPages }: { numPages: number }) => {
     setNumPages(numPages);
     setPdfLoading(false);
+    setPdfError(null);
+  };
+
+  const onDocumentLoadError = (err: any) => {
+    console.error("PDF Load Error:", err);
+    setPdfLoading(false);
+    setPdfError(
+      "စာအုပ်ဖတ်ရန် အခက်အခဲရှိနေပါသည်။ Settings မှ Reader Mode ပြောင်းကြည့်ပါ။",
+    );
   };
 
   const getBookCoverColor = (ddc: string) => {
-    const category = DDC_CATEGORIES.find(c => c.code === ddc);
+    const category = DDC_CATEGORIES.find((c) => c.code === ddc);
     return category ? category.color : COLORS.primary;
   };
 
-  const getProcessedCoverUrl = (url: string) => {
-    if (!url) return "";
-    try {
-      if (url.includes('drive.google.com')) {
-        const idMatch = url.match(/\/d\/([^/?]+)/) || url.match(/id=([^&]+)/);
-        if (idMatch && idMatch[1]) {
-          return `https://drive.google.com/thumbnail?id=${idMatch[1]}&sz=w800`;
-        }
-      }
-      if (url.includes('dropbox.com')) {
-        return url.replace('?dl=0', '?raw=1').replace('?dl=1', '?raw=1');
-      }
-    } catch (e) {
-      return url;
-    }
-    return url;
-  };
-
   const cycleViewerMode = () => {
-    if (viewerMode === 'custom') setViewerMode('native');
-    else if (viewerMode === 'native') setViewerMode('google');
-    else setViewerMode('custom');
+    if (viewerMode === "custom") setViewerMode("native");
+    else if (viewerMode === "native") setViewerMode("google");
+    else setViewerMode("custom");
     setPdfLoading(true);
+    setPdfError(null);
   };
 
   const getViewerUrl = () => {
     let url = book.pdfUrl;
     if (!url) return "";
-    if (viewerMode === 'google') {
+    if (viewerMode === "google")
       return `https://docs.google.com/gview?url=${encodeURIComponent(url)}&embedded=true`;
-    }
-    if (url.includes('drive.google.com')) {
-      return url.replace(/\/view.*/, '/preview').replace(/\/edit.*/, '/preview');
-    }
-    if (url.includes('dropbox.com')) {
-      return url.replace('?dl=0', '').replace('?dl=1', '') + '?raw=1';
-    }
+    if (url.includes("drive.google.com"))
+      return url
+        .replace(/\/view.*/, "/preview")
+        .replace(/\/edit.*/, "/preview");
     return url;
   };
 
-  const handleZoomIn = () => setScale(prev => Math.min(prev + 0.25, 3.0));
-  const handleZoomOut = () => setScale(prev => Math.max(prev - 0.25, 0.5));
-
-  const handlePageChange = (offset: number) => {
-    setPageNumber(prev => Math.min(Math.max(prev + offset, 1), numPages));
-  };
-  
-  const handleSliderChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setPageNumber(Number(e.target.value));
-  };
-
-  // Robust file URL handling to prevent "Invalid PDF url data" errors
-  const file = useMemo(() => {
-    if (!book.pdfUrl) return null;
-    
-    try {
-      // If it's a local file path (e.g. C:\Users...) entered by mistake, we can't load it in browser.
-      // But we can try to treat it as a string.
-      // Ideally, we want an absolute URL for the worker.
-      
-      const isAbsolute = /^(?:[a-z]+:)?\/\//i.test(book.pdfUrl) || book.pdfUrl.startsWith('data:');
-      
-      if (isAbsolute) {
-        return { url: book.pdfUrl };
-      }
-
-      // Resolve relative path to absolute
-      const absoluteUrl = new URL(book.pdfUrl, window.location.origin).toString();
-      return { url: absoluteUrl };
-      
-    } catch (e) {
-      console.warn("URL resolution failed, using raw string:", book.pdfUrl);
-      return { url: book.pdfUrl };
-    }
-  }, [book.pdfUrl]);
-
-  const displayCoverUrl = getProcessedCoverUrl(book.coverUrl);
   const showCoverImage = book.coverUrl && !imgError;
 
   return (
     <div className="animate-in fade-in zoom-in duration-500 h-full flex flex-col">
-      <div className="flex justify-between items-center mb-4">
-        <button 
-          onClick={onBack} 
-          className="flex items-center gap-2 text-slate-500 font-bold hover:text-indigo-600 transition-colors active:scale-95 focus:outline-none rounded-lg p-1"
-        >
-          <ArrowLeft size={24} /> <span className="hidden sm:inline">Back</span>
-        </button>
-
-        {/* Finish Book Button */}
+      <div className="flex justify-between items-center mb-6">
         <button
-           onClick={() => onFinishBook(book.id)}
-           disabled={isFinished}
-           className={`flex items-center gap-2 px-4 py-2 rounded-full font-black text-xs uppercase tracking-wide transition-all ${isFinished ? 'bg-emerald-100 text-emerald-600' : 'bg-slate-800 text-white hover:bg-slate-700 shadow-lg active:scale-95'}`}
+          onClick={onBack}
+          className="flex items-center gap-2 text-slate-700 bg-white px-5 py-3 rounded-2xl font-black hover:bg-slate-50 transition-all shadow-md active:scale-95"
         >
-           {isFinished ? (
-               <><CheckCircle size={16} /> Completed</>
-           ) : (
-               <>Mark as Finished</>
-           )}
+          <ArrowLeft size={20} /> နောက်သို့
         </button>
-      </div>
-      
-      {/* Mobile Tabs */}
-      <div 
-        className="flex lg:hidden bg-white rounded-t-[30px] shadow-sm border-b border-slate-100 overflow-hidden mb-0"
-      >
-        <button 
-          onClick={() => setMobileTab('info')}
-          className={`flex-1 py-4 flex items-center justify-center gap-2 text-xs font-black uppercase tracking-wider transition-colors ${mobileTab === 'info' ? 'bg-slate-800 text-white' : 'text-slate-400 bg-slate-50'}`}
+
+        <button
+          onClick={() => onFinishBook(book.id)}
+          disabled={isFinished}
+          className={`flex items-center gap-2 px-6 py-3 rounded-2xl font-black text-xs uppercase tracking-wide transition-all ${isFinished ? "bg-emerald-100 text-emerald-600" : "bg-slate-800 text-white hover:bg-slate-700 shadow-lg active:scale-95"}`}
         >
-          <Info size={16} /> Info
-        </button>
-        <button 
-          onClick={() => setMobileTab('reader')}
-          className={`flex-1 py-4 flex items-center justify-center gap-2 text-xs font-black uppercase tracking-wider transition-colors ${mobileTab === 'reader' ? 'bg-slate-800 text-white' : 'text-slate-400 bg-slate-50'}`}
-        >
-          <BookOpen size={16} /> Reader
+          {isFinished ? (
+            <>
+              <CheckCircle size={16} /> ဖတ်ပြီးပါပြီ
+            </>
+          ) : (
+            <>ဖတ်ပြီးကြောင်းမှတ်သားမည်</>
+          )}
         </button>
       </div>
 
-      <div className={`bg-white lg:rounded-[40px] rounded-b-[30px] rounded-t-none lg:rounded-t-[40px] shadow-2xl overflow-hidden flex flex-col lg:flex-row transition-all duration-300 ${isFullScreen ? 'h-[calc(100vh-100px)]' : 'lg:min-h-[600px] lg:h-[calc(100vh-180px)] h-[80vh] lg:h-auto'}`}>
-        
-        {/* Left: Info Side */}
-        <div 
-          className={`${mobileTab === 'info' ? 'flex' : 'hidden'} lg:${isFullScreen ? 'hidden' : 'flex'} lg:w-1/3 bg-slate-50 p-6 lg:p-10 flex-col items-center border-r border-slate-100 overflow-y-auto h-full`}
+      <div className="flex lg:hidden bg-white rounded-t-[30px] shadow-sm border-b border-slate-100 overflow-hidden">
+        <button
+          onClick={() => setMobileTab("info")}
+          className={`flex-1 py-4 font-black uppercase tracking-wider text-xs ${mobileTab === "info" ? "bg-slate-800 text-white" : "text-slate-400 bg-slate-50"}`}
         >
-          <div 
-            className="w-32 h-48 lg:w-48 lg:h-64 rounded-2xl shadow-2xl overflow-hidden mb-6 lg:mb-8 shrink-0 transition-transform hover:scale-105 duration-300" 
-            style={!showCoverImage ? { backgroundColor: getBookCoverColor(book.ddc) } : {}}
+          Info
+        </button>
+        <button
+          onClick={() => setMobileTab("reader")}
+          className={`flex-1 py-4 font-black uppercase tracking-wider text-xs ${mobileTab === "reader" ? "bg-slate-800 text-white" : "text-slate-400 bg-slate-50"}`}
+        >
+          Reader
+        </button>
+      </div>
+
+      <div
+        className={`bg-white lg:rounded-[40px] rounded-b-[30px] shadow-2xl overflow-hidden flex flex-col lg:flex-row transition-all duration-300 ${isFullScreen ? "fixed inset-0 z-[60] rounded-none" : "lg:h-[calc(100vh-220px)] h-[70vh]"}`}
+      >
+        <div
+          className={`${mobileTab === "info" ? "flex" : "hidden"} lg:${isFullScreen ? "hidden" : "flex"} lg:w-1/3 bg-slate-50 p-8 flex-col items-center border-r border-slate-100 overflow-y-auto scroll-smooth`}
+        >
+          <div className="relative w-full aspect-[291/396] max-w-[170px] mx-auto mb-6 shrink-0 transition-transform hover:scale-105 duration-500">
+             <div className="absolute inset-0">
+               <svg width="100%" height="100%" viewBox="0 0 291 396" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" style={{ filter: 'drop-shadow(0px 10px 15px rgba(0,0,0,0.15))' }}>
+                 <path fillRule="evenodd" clipRule="evenodd" d="M290.452 340.188C290.447 345.086 290.864 350.299 290.31 355.165C289.401 363.157 279.802 371.364 270.65 372.013C265.458 372.38 260.07 372.142 254.855 372.136L117.659 372.115C117.671 372.254 117.694 372.375 117.733 372.464L31.8476 372.273C25.0189 372.267 20.0474 372.712 14.2001 368.676C6.59749 361.492 4.49487 350.312 10.4179 341.279C15.5595 333.44 23.8017 332.59 32.2851 332.576L44.2011 332.589L103.038 332.615C103.038 332.588 103.038 332.56 103.038 332.532L117.51 332.547L153.494 332.475L265.29 332.493C274.951 332.528 284.809 334.779 289.414 323.853C289.806 322.924 289.971 321.921 290.372 321L290.452 340.188Z" fill="#2E3946"/>
+                 <path d="M195 393.298V332.242V329H232V396L216.951 380.898L195 393.298Z" fill={getBookCoverColor(book.ddc)}/>
+                 <path d="M195 337V329H232V337H195Z" fill="black" fillOpacity="0.2"/>
+                 <path d="M14.4047 369C3.95625 367.439 0.25104 353.539 0.195741 344.875L0.118269 39.8202C0.0969849 36.237 -0.222208 32.3688 0.286829 28.8301C2.14409 15.9332 14.5418 3.45712 27.3803 0.743492C32.8892 -0.420896 39.3711 0.13225 45 0.125246L44.9294 332.973L32.7241 332.898C24.1305 332.911 15.7812 333.761 10.5727 341.601C4.57254 350.635 6.70306 361.816 14.4047 369Z" fill={getBookCoverColor(book.ddc)}/>
+                 <path d="M14.4047 369C3.95625 367.439 0.25104 353.539 0.195741 344.875L0.118269 39.8202C0.0969849 36.237 -0.222208 32.3688 0.286829 28.8301C2.14409 15.9332 14.5418 3.45712 27.3803 0.743492C32.8892 -0.420896 39.3711 0.13225 45 0.125246L44.9294 332.973L32.7241 332.898C24.1305 332.911 15.7812 333.761 10.5727 341.601C4.57254 350.635 6.70306 361.816 14.4047 369Z" fill="black" fillOpacity="0.2"/>
+                 <path d="M44.1488 0.0799874L269.209 0C279.142 0.00694221 287.962 1.31452 290.719 13.4632C291.181 15.5004 290.933 17.9451 290.939 20.0361L290.929 320.705L290.664 321.118C290.204 322.086 290.047 323.158 289.63 324.146C285.025 335.072 275.167 332.82 265.506 332.786L153.71 332.767L117.725 332.84L44 332.766L44.1488 0.0799874Z" fill={getBookCoverColor(book.ddc)}/>
+               </svg>
+             </div>
+             
+             <div className="absolute inset-0 z-10 flex flex-col p-3 text-white">
+                <span className="absolute left-[18%] top-[5%] text-[10px] font-semibold tracking-wide drop-shadow-sm opacity-95">ID- {book.id}</span>
+                
+                <div className="absolute top-[35%] left-[20%] right-[5%] flex items-center justify-center">
+                   <h4 className="text-[14px] font-semibold line-clamp-4 leading-snug drop-shadow-md text-center text-white/95">
+                     {book.title}
+                   </h4>
+                </div>
+             </div>
+          </div>
+          <h2 className="text-xl font-black text-slate-800 text-center mb-2">
+            {book.title}
+          </h2>
+          <p className="text-slate-500 font-bold mb-6">{book.author}</p>
+          <div className="w-full space-y-3">
+            <div className="p-4 bg-white rounded-2xl flex justify-between items-center text-xs font-bold border border-slate-100">
+              <span className="text-slate-400 uppercase">Category</span>
+              <span className="text-indigo-600 font-black">DDC {book.ddc}</span>
+            </div>
+            <div className="p-4 bg-white rounded-2xl flex justify-between items-center text-xs font-bold border border-slate-100">
+              <span className="text-slate-400 uppercase">Year</span>
+              <span className="text-slate-700 font-black">{book.year}</span>
+            </div>
+          </div>
+          <button
+            onClick={() => setMobileTab("reader")}
+            className="lg:hidden w-full py-4 mt-6 rounded-2xl bg-indigo-600 text-white font-black shadow-lg"
           >
-            {showCoverImage ? (
-              <img 
-                src={displayCoverUrl} 
-                className="w-full h-full object-cover" 
-                alt={book.title} 
-                onError={() => setImgError(true)}
-              />
-            ) : (
-              <div className="h-full flex items-center justify-center text-white flex-col gap-2 p-4 text-center">
-                 <BookIcon size={48} className="opacity-50" />
-                 <span className="text-xs font-black uppercase opacity-80">{book.title}</span>
+            Read Now
+          </button>
+        </div>
+
+        <div
+          className={`${mobileTab === "reader" ? "flex" : "hidden"} lg:flex flex-1 bg-slate-900 p-2 lg:p-4 flex-col relative`}
+        >
+          <div className="flex justify-between items-center mb-3 bg-slate-800/50 p-2 rounded-xl relative z-20">
+            <div className="flex gap-2">
+              <button
+                onClick={cycleViewerMode}
+                className="p-2 rounded-lg bg-white/10 text-slate-300 hover:text-white hover:bg-white/20 transition-colors text-[10px] font-black uppercase flex items-center gap-2"
+              >
+                {viewerMode === "custom" ? (
+                  <Settings2 size={14} />
+                ) : viewerMode === "native" ? (
+                  <Monitor size={14} />
+                ) : (
+                  <Globe size={14} />
+                )}
+                {viewerMode}
+              </button>
+              {viewerMode === "custom" && (
+                <button
+                  onClick={() => setShowSettings(!showSettings)}
+                  className={`p-2 rounded-lg text-white transition-colors ${showSettings ? "bg-indigo-500" : "bg-white/10 hover:bg-white/20"}`}
+                >
+                  <SlidersHorizontal size={14} />
+                </button>
+              )}
+              <button
+                onClick={() => setIsFullScreen(!isFullScreen)}
+                className="p-2 bg-white/10 text-white rounded-lg hover:bg-white/20 transition-colors"
+              >
+                <Maximize2 size={14} />
+              </button>
+            </div>
+
+            {viewerMode === "custom" && (
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={() => setPageNumber((p) => Math.max(1, p - 1))}
+                  className="text-white/50 hover:text-white"
+                >
+                  <ChevronLeft size={20} />
+                </button>
+                <span className="text-[10px] font-mono text-white/70">
+                  {pageNumber}/{numPages}
+                </span>
+                <button
+                  onClick={() =>
+                    setPageNumber((p) => Math.min(numPages, p + 1))
+                  }
+                  className="text-white/50 hover:text-white"
+                >
+                  <ChevronRight size={20} />
+                </button>
               </div>
             )}
           </div>
-          <h2 className="text-xl lg:text-2xl font-black text-slate-800 text-center mb-2 leading-tight">{book.title}</h2>
-          <p className="text-slate-500 font-bold italic mb-6 lg:mb-8 text-sm lg:text-base">{book.author}</p>
-          
-          <button 
-            onClick={() => setMobileTab('reader')}
-            className="lg:hidden w-full py-4 rounded-2xl bg-indigo-600 text-white font-black shadow-lg active:scale-95 transition-transform mb-6 flex items-center justify-center gap-2"
-          >
-             <BookOpen size={20} /> Read Now
-          </button>
 
-          <div className="w-full space-y-3 lg:space-y-4 mt-auto">
-            <div className="p-4 lg:p-5 bg-white rounded-2xl lg:rounded-3xl flex justify-between items-center text-xs font-bold shadow-sm border border-slate-100">
-              <span className="text-slate-400">CATEGORY</span>
-              <span className="text-indigo-600 font-black">DDC {book.ddc}</span>
-            </div>
-            <div className="p-4 lg:p-5 bg-white rounded-2xl lg:rounded-3xl flex justify-between items-center text-xs font-bold shadow-sm border border-slate-100">
-              <span className="text-slate-400">PUBLISHED</span>
-              <span className="text-slate-700 font-black">{book.year || "Unknown"}</span>
-            </div>
-          </div>
-        </div>
-        
-        {/* Right: PDF Viewer Side */}
-        <div 
-          className={`${mobileTab === 'reader' ? 'flex' : 'hidden'} lg:flex ${isFullScreen ? 'w-full' : 'lg:w-2/3'} bg-slate-900 p-2 lg:p-4 flex-col relative group transition-all duration-300 h-full`}
-        >
-          {book.pdfUrl ? (
-            <div className="w-full h-full flex flex-col">
-              {/* Toolbar */}
-              <div className="flex flex-wrap justify-between items-center mb-3 lg:mb-4 px-1 gap-2 bg-slate-800/50 p-2 rounded-xl border border-slate-700/50">
-                
-                <div className="flex items-center gap-2">
-                   <button
-                    onClick={cycleViewerMode}
-                    className="p-2 rounded-lg transition-colors flex items-center gap-2 text-[10px] font-bold uppercase focus:outline-none bg-white/10 hover:bg-white/20 text-slate-300"
-                   >
-                     {viewerMode === 'custom' ? <Settings2 size={16} /> : viewerMode === 'native' ? <Monitor size={16} /> : <Globe size={16} />}
-                     <span className="hidden sm:inline">
-                        {viewerMode === 'custom' ? "Reader" : viewerMode === 'native' ? "Legacy" : "Google"}
-                     </span>
-                   </button>
-
-                   <button 
-                    onClick={() => setIsFullScreen(!isFullScreen)}
-                    className="bg-white/10 hover:bg-white/20 p-2 rounded-lg text-white transition-colors hidden lg:block"
-                  >
-                    {isFullScreen ? <Minimize2 size={16} /> : <Maximize2 size={16} />}
-                  </button>
-                </div>
-
-                {viewerMode === 'custom' && (
-                  <div className="flex items-center gap-3 flex-1 justify-center max-sm:hidden">
-                    <div className="flex items-center bg-slate-900 rounded-lg p-0.5 border border-slate-700">
-                      <button onClick={handleZoomOut} className="p-1.5 hover:bg-white/10 rounded-md text-slate-400 hover:text-white">
-                        <ZoomOut size={14} />
-                      </button>
-                      <span className="text-[10px] font-mono text-slate-300 w-10 text-center">{Math.round(scale * 100)}%</span>
-                      <button onClick={handleZoomIn} className="p-1.5 hover:bg-white/10 rounded-md text-slate-400 hover:text-white">
-                        <ZoomIn size={14} />
-                      </button>
-                    </div>
-
-                    <div className="flex items-center gap-2 bg-slate-900 rounded-lg p-1 border border-slate-700 px-3">
-                      <button disabled={pageNumber <= 1} onClick={() => handlePageChange(-1)} className="text-slate-400 hover:text-white disabled:opacity-30">
-                        <ChevronLeft size={16} />
-                      </button>
-                      <div className="flex items-center gap-2">
-                         <input 
-                            type="range" 
-                            min="1" 
-                            max={numPages || 1} 
-                            value={pageNumber} 
-                            onChange={handleSliderChange}
-                            className="w-24 h-1 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-indigo-500"
-                         />
-                         <span className="text-[10px] font-mono text-slate-300 whitespace-nowrap">
-                            {pageNumber} / {numPages || '--'}
-                         </span>
-                      </div>
-                      <button disabled={pageNumber >= numPages} onClick={() => handlePageChange(1)} className="text-slate-400 hover:text-white disabled:opacity-30">
-                        <ChevronRight size={16} />
-                      </button>
-                    </div>
-                  </div>
-                )}
+          {showSettings && viewerMode === "custom" && (
+            <div className="absolute top-16 left-4 bg-slate-800 border border-slate-700 p-5 rounded-2xl shadow-2xl z-50 w-64 flex flex-col gap-5 animate-in fade-in slide-in-from-top-2">
+              <div className="flex justify-between items-center">
+                <span className="text-[11px] font-black text-slate-300 uppercase tracking-widest">
+                  Display Settings
+                </span>
+                <button
+                  onClick={() => setShowSettings(false)}
+                  className="text-slate-500 hover:text-white transition-colors"
+                >
+                  &times;
+                </button>
               </div>
-              
-              {/* Mobile Toolbar */}
-              {viewerMode === 'custom' && (
-                <div className="sm:hidden flex flex-col gap-3 mb-3 bg-slate-800/50 p-3 rounded-xl border border-slate-700/50">
-                   <div className="flex items-center justify-center gap-6 border-b border-white/5 pb-2">
-                      <button onClick={handleZoomOut} className="p-2 bg-slate-800 rounded-lg text-slate-300">
-                        <ZoomOut size={18} />
-                      </button>
-                      <span className="text-xs font-mono text-slate-300 font-bold">{Math.round(scale * 100)}%</span>
-                      <button onClick={handleZoomIn} className="p-2 bg-slate-800 rounded-lg text-slate-300">
-                        <ZoomIn size={18} />
-                      </button>
-                   </div>
-                   
-                   <div className="flex items-center gap-3 w-full">
-                      <button onClick={() => handlePageChange(-1)} className="text-slate-400 p-1">
-                        <ChevronLeft size={24}/>
-                      </button>
-                      <div className="flex-1 flex flex-col gap-1">
-                        <input 
-                            type="range" 
-                            min="1" 
-                            max={numPages || 1} 
-                            value={pageNumber} 
-                            onChange={handleSliderChange}
-                            className="w-full h-2 bg-slate-700 rounded-lg appearance-none accent-indigo-500"
-                        />
-                        <div className="flex justify-between text-[10px] text-slate-400 font-mono px-1">
-                          <span>1</span>
-                          <span>{pageNumber} / {numPages}</span>
-                          <span>{numPages}</span>
-                        </div>
-                      </div>
-                      <button onClick={() => handlePageChange(1)} className="text-slate-400 p-1">
-                        <ChevronRight size={24}/>
-                      </button>
-                   </div>
+
+              <div className="space-y-3">
+                <div className="flex justify-between text-[10px] text-slate-400 font-black uppercase">
+                  <span className="flex items-center gap-1.5">
+                    <Sun size={12} /> Brightness
+                  </span>
+                  <span>{brightness}%</span>
                 </div>
-              )}
+                <input
+                  type="range"
+                  min="50"
+                  max="150"
+                  value={brightness}
+                  onChange={(e) => setBrightness(Number(e.target.value))}
+                  className="w-full accent-indigo-500 h-1.5 bg-slate-700 rounded-lg appearance-none cursor-pointer"
+                />
+              </div>
 
-              <div 
-                ref={containerRef}
-                className="relative grow rounded-2xl bg-slate-100/5 overflow-auto shadow-inner flex justify-center p-4 no-scrollbar border border-white/5"
-              >
-                {pdfLoading && (
-                  <div className="absolute inset-0 flex flex-col items-center justify-center text-slate-400 z-10">
-                    <Loader2 className="animate-spin mb-4 text-[#DB8C29]" size={48} />
-                    <p className="text-xs font-black uppercase tracking-widest opacity-60">Loading Document...</p>
-                  </div>
-                )}
+              <div className="space-y-3">
+                <div className="flex justify-between text-[10px] text-slate-400 font-black uppercase">
+                  <span className="flex items-center gap-1.5">
+                    <Settings2 size={12} /> Contrast
+                  </span>
+                  <span>{contrast}%</span>
+                </div>
+                <input
+                  type="range"
+                  min="50"
+                  max="150"
+                  value={contrast}
+                  onChange={(e) => setContrast(Number(e.target.value))}
+                  className="w-full accent-indigo-500 h-1.5 bg-slate-700 rounded-lg appearance-none cursor-pointer"
+                />
+              </div>
 
-                {viewerMode === 'custom' && file ? (
-                  <Document
-                    file={file}
-                    onLoadSuccess={onDocumentLoadSuccess}
-                    onLoadError={(err) => { console.error("PDF Load Error:", err); setPdfLoading(false); }}
-                    loading={null}
-                    className="flex flex-col items-center"
-                  >
-                    <Page 
-                      pageNumber={pageNumber} 
-                      scale={scale} 
-                      width={containerWidth ? Math.min(containerWidth - 40, 800) : undefined}
-                      className="shadow-2xl mb-4"
-                      renderAnnotationLayer={true}
-                      renderTextLayer={true}
-                    />
-                  </Document>
-                ) : viewerMode !== 'custom' ? (
-                  <iframe 
-                    src={getViewerUrl()} 
-                    className="w-full h-full border-none bg-white rounded-xl" 
-                    title={`PDF Reader for ${book.title}`}
-                    allow="autoplay"
-                    onLoad={() => setPdfLoading(false)}
+              <div className="pt-4 border-t border-slate-700 flex justify-between items-center">
+                <span className="text-xs font-bold text-slate-300 flex items-center gap-2">
+                  {isDarkMode ? (
+                    <Moon size={14} className="text-indigo-400" />
+                  ) : (
+                    <Sun size={14} className="text-amber-400" />
+                  )}
+                  Dark Mode
+                </span>
+                <button
+                  onClick={() => setIsDarkMode(!isDarkMode)}
+                  className={`w-11 h-6 rounded-full relative transition-colors ${isDarkMode ? "bg-indigo-500" : "bg-slate-600"}`}
+                >
+                  <div
+                    className={`absolute top-1 left-1 w-4 h-4 rounded-full bg-white transition-transform ${isDarkMode ? "translate-x-5" : "translate-x-0"}`}
                   />
-                ) : (
-                   <div className="m-auto text-center text-white opacity-40 space-y-4 py-20">
-                     <FileText size={100} className="mx-auto" />
-                     <p className="text-xl font-bold">PDF Unavailable</p>
-                   </div>
-                )}
+                </button>
               </div>
-            </div>
-          ) : (
-            <div className="m-auto text-center text-white opacity-40 space-y-4 py-20 animate-pulse">
-              <FileText size={100} className="mx-auto" />
-              <p className="text-xl font-bold">PDF Unavailable</p>
             </div>
           )}
+
+          <div
+            ref={containerRef}
+            className="flex-1 bg-white/5 rounded-xl overflow-auto scroll-smooth p-4 flex justify-center no-scrollbar relative z-10"
+          >
+            {pdfLoading && (
+              <div className="absolute inset-0 flex items-center justify-center bg-slate-900/40 z-10">
+                <Loader2 className="animate-spin text-[#AAB971]" size={40} />
+              </div>
+            )}
+
+            {pdfError ? (
+              <div className="m-auto text-center p-8">
+                <AlertTriangle
+                  size={48}
+                  className="mx-auto text-amber-500 mb-4 opacity-50"
+                />
+                <p className="text-slate-400 text-sm mb-6">{pdfError}</p>
+                <button
+                  onClick={cycleViewerMode}
+                  className="px-6 py-3 bg-indigo-600 text-white rounded-xl text-xs font-black uppercase"
+                >
+                  Switch Mode
+                </button>
+              </div>
+            ) : !book.pdfUrl ? (
+              <div className="m-auto text-center p-8">
+                <BookOpen size={48} className="mx-auto text-slate-300 mb-4" />
+                <p className="text-slate-400 text-sm font-bold">
+                  PDF စာအုပ် မရရှိနိုင်သေးပါ။
+                </p>
+              </div>
+            ) : viewerMode === "custom" && pdfFile ? (
+              <div
+                style={{
+                  filter: `brightness(${brightness}%) contrast(${contrast}%) ${isDarkMode ? "invert(100%) hue-rotate(180deg)" : ""}`,
+                }}
+                className="transition-all duration-300 w-full flex justify-center"
+              >
+                <Document
+                  file={pdfFile}
+                  onLoadSuccess={onDocumentLoadSuccess}
+                  onLoadError={onDocumentLoadError}
+                  className="flex flex-col items-center w-full"
+                >
+                  <Page
+                    pageNumber={pageNumber}
+                    scale={scale}
+                    width={
+                      containerWidth
+                        ? Math.min(containerWidth - 40, 800)
+                        : undefined
+                    }
+                    className="shadow-2xl mb-8"
+                    renderAnnotationLayer={false}
+                    renderTextLayer={true}
+                  />
+                </Document>
+              </div>
+            ) : (
+              <iframe
+                src={getViewerUrl() || undefined}
+                className="w-full h-full border-none bg-white rounded-lg"
+                onLoad={() => setPdfLoading(false)}
+              />
+            )}
+          </div>
         </div>
       </div>
     </div>

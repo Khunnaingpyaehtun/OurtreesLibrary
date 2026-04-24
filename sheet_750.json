@@ -1,0 +1,77 @@
+[
+  {
+    "#VALUE!": "ACCESSION REGISTER"
+  },
+  {
+    "#VALUE!": "Accession Number",
+    "__EMPTY": "Class Number",
+    "__EMPTY_1": "Book Name",
+    "__EMPTY_2": "Author Name",
+    "__EMPTY_3": "Publisher",
+    "__EMPTY_4": "Year"
+  },
+  {
+    "#VALUE!": "OTL00690",
+    "__EMPTY": "750-0001",
+    "__EMPTY_1": "Calligraphy Magic",
+    "__EMPTY_2": "Cari Buziak",
+    "__EMPTY_3": "North Light Books",
+    "__EMPTY_4": "nil"
+  },
+  {
+    "#VALUE!": "OTL00691",
+    "__EMPTY": "750-0002",
+    "__EMPTY_1": "The Art of Calligraphy",
+    "__EMPTY_2": "David Harris",
+    "__EMPTY_3": "Dorling Kindersley Limited",
+    "__EMPTY_4": 1995
+  },
+  {
+    "#VALUE!": "OTL00692",
+    "__EMPTY": "750-0003",
+    "__EMPTY_1": "The Calligrapher's Bible",
+    "__EMPTY_2": "David Harris",
+    "__EMPTY_3": "Barron's Educational Series",
+    "__EMPTY_4": 2003
+  },
+  {
+    "#VALUE!": "OTL00693",
+    "__EMPTY": "750-0004",
+    "__EMPTY_1": "Calligraphy 101",
+    "__EMPTY_2": "Jeaneen Gauthier",
+    "__EMPTY_3": "Creative Publishing International",
+    "__EMPTY_4": 2010
+  },
+  {
+    "#VALUE!": "OTL00694",
+    "__EMPTY": "750-0005",
+    "__EMPTY_1": "Wedding Calligraphy",
+    "__EMPTY_2": "Laura Hoopers",
+    "__EMPTY_3": "Race Horse Publishing",
+    "__EMPTY_4": 2017
+  },
+  {
+    "#VALUE!": "OTL00695",
+    "__EMPTY": "750-0006",
+    "__EMPTY_1": "ပန်းချီသင်တန်း",
+    "__EMPTY_2": "Paint Forever",
+    "__EMPTY_3": "nil",
+    "__EMPTY_4": "nil"
+  },
+  {
+    "#VALUE!": "OTL00696",
+    "__EMPTY": "750-0007",
+    "__EMPTY_1": "စိတ္တဇပန်းချီ",
+    "__EMPTY_2": "ခင်ဝမ်း",
+    "__EMPTY_3": "အလင်းသစ်စာပေတိုက်",
+    "__EMPTY_4": "nil"
+  },
+  {
+    "#VALUE!": "OTL00697",
+    "__EMPTY": "750-0008",
+    "__EMPTY_1": "ပန်းချီရေးရာနှင့်ပုံဆွဲအခြေခံများ",
+    "__EMPTY_2": "အောင်မြတ်ဌေး",
+    "__EMPTY_3": "စိတ်ကူးချိုချိုအနုပညာ",
+    "__EMPTY_4": 2003
+  }
+]
